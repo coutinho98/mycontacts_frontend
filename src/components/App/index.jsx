@@ -12,13 +12,13 @@ import { Container } from './styles';
 function App() {
   return (
     <BrowserRouter>
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyles />
-      <Container>
-        <Header />
-        <Routes />
-      </Container>
-    </ThemeProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyles />
+        <Container>
+          <Header />
+          <Routes />
+        </Container>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
