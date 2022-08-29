@@ -46,7 +46,7 @@ export default function ContactsList() {
         <Card>
           <div className="info">
             <div className="contact-name">
-              <strong>Rose Sena</strong>
+              <strong>Baco Exu do Blues</strong>
               <small>Discord</small>
             </div>
             <span>rosesena@email.com</span>
@@ -64,10 +64,10 @@ export default function ContactsList() {
         <Card>
           <div className="info">
             <div className="contact-name">
-              <strong>João Sauro</strong>
+              <strong>João Gomes</strong>
               <small>Linkedin</small>
             </div>
-            <span>joãosauro@email.com</span>
+            <span>tôquerendotebeijardnv@email.com</span>
             <span>(71) 21314213</span>
           </div>
           <div className="actions">
