@@ -51,10 +51,10 @@ export default function Home() {
         <Card>
           <div className="info">
             <div className="contact-name">
-              <strong>Baco Exu do Blues</strong>
+              <strong>Diogo Moncorvo</strong>
               <small>Discord</small>
             </div>
-            <span>rosesena@email.com</span>
+            <span>diogomancorvo@email.com</span>
             <span>(71) 123124213</span>
           </div>
           <div className="actions">

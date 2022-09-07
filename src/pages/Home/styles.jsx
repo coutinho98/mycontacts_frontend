@@ -5,20 +5,20 @@ export const Container = styled.div`
 `;
 
 export const InputSearchContainer = styled.div`
-    width: 100%;
+      width: 100%;
 
     input {
-        background: '#fff';
-        width: 100%;
-        height: 50px;
-        border: none;
-        border-radius: 25px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        outline: 0;
-        padding: 0 16px;
+      background: '#fff';
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      outline: 0;
+      padding: 0 16px;
 
         &::placeholder {
-            opacity: 0.4;
+      opacity: 0.4;
         }
     }
 `;
@@ -50,69 +50,69 @@ export const Header = styled.header`
 `;
 
 export const ListContainer = styled.div`
-    margin-top: 24px;
+      margin-top: 24px;
 
-    header {
-        margin-bottom: 8px;
-    .sort-button {
-        background: transparent;
-        border: none;
-        display: flex;
-        align-items: center;
+  header {
+      margin-bottom: 8px;
+  .sort-button {
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
 
     span {
-        margin-right: 8px;
-        font-weight: bold;
-        color: ${({ theme }) => theme.colors.primary.main};
+      margin-right: 8px;
+      font-weight: bold;
+      color: ${({ theme }) => theme.colors.primary.main};
          }
       }
     }
 `;
 
 export const Card = styled.div`
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
       & + & {
-        margin-top: 18px;
+      margin-top: 18px;
       }
 
-      .info {
-        .contact-name {
-          display: flex;
-          align-items: center;
+  .info {
+    .contact-name {
+      display: flex;
+      align-items: center;
 
-      small {
-        background: ${({ theme }) => theme.colors.primary.lighter};
-        color: ${({ theme }) => theme.colors.primary.main};
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 4px;
-        border-radius: 4px;
-        margin-left: 8px;
+    small {
+      background: ${({ theme }) => theme.colors.primary.lighter};
+      color: ${({ theme }) => theme.colors.primary.main};
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 4px;
+      border-radius: 4px;
+      margin-left: 8px;
      }
     }
 
      span {
-        display: block;
-        font-size: 14px;
-        color: ${({ theme }) => theme.colors.gray[300]};
+      display: block;
+      font-size: 14px;
+      color: ${({ theme }) => theme.colors.gray[300]};
       }
     }
 
     .actions {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        button {
-          background: transparent;
-          border: none;
-          margin-left: 8px;
-        }
-      }
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    button {
+      background: transparent;
+      border: none;
+      margin-left: 8px;
+    }
+  }
 `;
