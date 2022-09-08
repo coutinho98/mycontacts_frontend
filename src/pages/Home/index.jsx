@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import {
   Container,
   InputSearchContainer,
@@ -17,8 +19,8 @@ export default function Home() {
         <input type="text" placeholder="search for contacts" />
       </InputSearchContainer>
       <Header>
-        <strong>3 contatos</strong>
-        <a href="/">novo contato</a>
+        <strong>1 contato</strong>
+        <Link to="/new">novo contato</Link>
       </Header>
 
       <ListContainer>
@@ -33,53 +35,15 @@ export default function Home() {
           <div className="info">
             <div className="contact-name">
               <strong>Mateus Couto</strong>
-              <small>Instagram</small>
+              <small>instagram</small>
             </div>
             <span>mateuscouto@email.com</span>
-            <span>(71) 9921312312</span>
-          </div>
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Trash" />
-            </button>
-          </div>
-        </Card>
-
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Diogo Moncorvo</strong>
-              <small>Discord</small>
-            </div>
-            <span>diogomancorvo@email.com</span>
-            <span>(71) 123124213</span>
-          </div>
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Trash" />
-            </button>
-          </div>
-        </Card>
-
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>João Gomes</strong>
-              <small>Linkedin</small>
-            </div>
-            <span>tôquerendotebeijardnv@email.com</span>
             <span>(71) 21314213</span>
           </div>
           <div className="actions">
-            <a href="/">
+            <Link to="/edit/123">
               <img src={edit} alt="Edit" />
-            </a>
+            </Link>
             <button type="button">
               <img src={trash} alt="Trash" />
             </button>
