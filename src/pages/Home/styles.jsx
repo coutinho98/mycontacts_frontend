@@ -17,7 +17,7 @@ export const InputSearchContainer = styled.div`
       outline: 0;
       padding: 0 16px;
 
-        &::placeholder {
+    &::placeholder {
       opacity: 0.4;
         }
     }
@@ -40,7 +40,7 @@ export const Header = styled.header`
       border: 2px solid ${({ theme }) => theme.colors.primary.main};
       padding: 7px 16px;
       border-radius: 4px;
-      transition: all 0.2s ease-in;
+      transition: all 0.4s ease-in;
 
   &:hover {
       background: ${({ theme }) => theme.colors.primary.main};

@@ -11,22 +11,24 @@ import {
 import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
+import Modal from '../../components/Modal';
 
 export default function Home() {
   return (
     <Container>
+      <Modal />
       <InputSearchContainer>
         <input type="text" placeholder="search for contacts" />
       </InputSearchContainer>
       <Header>
-        <strong>1 contato</strong>
-        <Link to="/new">novo contato</Link>
+        <strong>1 contact</strong>
+        <Link to="/new">new contact</Link>
       </Header>
 
       <ListContainer>
         <header>
           <button type="button" className="sort-button">
-            <span>nome</span>
+            <span>name</span>
             <img src={arrow} alt="Arrow" />
           </button>
         </header>

@@ -10,7 +10,7 @@ export default function ContactForm({ buttonLabel }) {
   return (
     <Form>
       <FormGroup>
-        <Input placeholder="nome" />
+        <Input placeholder="name" />
       </FormGroup>
 
       <FormGroup>
@@ -18,7 +18,7 @@ export default function ContactForm({ buttonLabel }) {
       </FormGroup>
 
       <FormGroup>
-        <Input placeholder="telefone" />
+        <Input placeholder="phone" />
       </FormGroup>
 
       <FormGroup>

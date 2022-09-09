@@ -4,6 +4,7 @@ export const Container = styled.header`
   margin-bottom: 24px;
 
   a {
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     text-decoration: none;
