@@ -5,7 +5,7 @@ export default function EditContact() {
   return (
     <>
     <PageHeader
-      title="edit Mateus Couto"
+      title="edit mateus couto"
     />
 
     <ContactForm

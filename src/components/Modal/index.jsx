@@ -11,7 +11,6 @@ export default function Modal({ danger }) {
         <p>body of modal</p>
 
         <Footer>
-
           <button type="button" className="cancel-button">cancel</button>
           <Button type="button" danger={danger}>delete</Button>
         </Footer>

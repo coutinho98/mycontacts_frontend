@@ -109,6 +109,7 @@ export const Card = styled.div`
       display: flex;
       align-items: center;
       justify-content: space-between;
+
     button {
       background: transparent;
       border: none;
