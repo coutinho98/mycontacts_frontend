@@ -13,8 +13,10 @@ export default function ContactForm({ buttonLabel }) {
         <Input placeholder="name" />
       </FormGroup>
 
-      <FormGroup>
-        <Input placeholder="email" />
+      <FormGroup
+        error="invalid email"
+      >
+        <Input placeholder="email" error />
       </FormGroup>
 
       <FormGroup>
