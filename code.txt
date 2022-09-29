@@ -1,0 +1,9 @@
+from PIL import Image
+import os
+
+path = "./lula2022"
+os.mkdir(path)
+list_photos = os.listdir('imagens')
+for photos in list_photos:
+    imagem = Image.open(f'imagens/{photos}')
+    imagem.save(f"FotosConvertidas/{photos.replace('nef', 'png')}")
