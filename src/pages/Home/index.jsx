@@ -17,8 +17,8 @@ import trash from '../../assets/images/icons/trash.svg';
 export default function Home() {
   return (
     <Container>
-     {/*  <Loader /> */}
-     {/*   <Modal danger /> */}
+      {/*  <Loader /> */}
+      {/*   <Modal danger /> */}
       <InputSearchContainer>
         <input type="text" placeholder="search for contacts" />
       </InputSearchContainer>
@@ -57,3 +57,11 @@ export default function Home() {
     </Container>
   );
 }
+
+fetch('http://localhost:3000')
+  .then((response) => {
+    console.log('response', response);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
