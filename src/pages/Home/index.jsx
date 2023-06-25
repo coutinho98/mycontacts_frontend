@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import {
   Container,
@@ -6,11 +6,11 @@ import {
   Header,
   ListContainer,
   Card,
-} from './styles';
+} from "./styles";
 
-import arrow from '../../assets/images/icons/arrow.svg';
-import edit from '../../assets/images/icons/edit.svg';
-import trash from '../../assets/images/icons/trash.svg';
+import arrow from "../../assets/images/icons/arrow.svg";
+import edit from "../../assets/images/icons/edit.svg";
+import trash from "../../assets/images/icons/trash.svg";
 /* import Loader from '../../components/Loader'; */
 /* import Modal from '../../components/Modal'; */
 
@@ -58,9 +58,14 @@ export default function Home() {
   );
 }
 
-fetch('http://localhost:3000')
+fetch("http://localhost:3001/contacts", {
+  method: "GET",
+  headers: new Headers({
+    'X-App-ID': '123',
+  }),
+})
   .then((response) => {
-    console.log('response', response);
+    console.log(response);
   })
   .catch((error) => {
     console.log(error);

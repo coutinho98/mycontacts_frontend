@@ -1,40 +1,36 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import PropTypes from "prop-types";
+import { useState } from "react";
 
-import formatPhone from '../../utils/formatPhone';
-import isEmailValid from '../../utils/isEmailValid';
+import formatPhone from "../../utils/formatPhone";
+import isEmailValid from "../../utils/isEmailValid";
 
-import useErrors from '../../hooks/useErrors';
+import useErrors from "../../hooks/useErrors";
 
-import { Form, ButtonContainer } from './styles';
+import { Form, ButtonContainer } from "./styles";
 
-import FormGroup from '../FormGroup';
-import Input from '../Input';
-import Select from '../Select';
-import Button from '../Button';
+import FormGroup from "../FormGroup";
+import Input from "../Input";
+import Select from "../Select";
+import Button from "../Button";
 
 export default function ContactForm({ buttonLabel }) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [category, setCategory] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [category, setCategory] = useState("");
 
-  const {
-    errors,
-    setError,
-    removeError,
-    getErrorMessageByFieldName,
-  } = useErrors();
+  const { errors, setError, removeError, getErrorMessageByFieldName } =
+    useErrors();
 
-  const isFormValid = (name && errors.length === 0);
+  const isFormValid = name && errors.length === 0;
 
   function handleNameChange(event) {
     setName(event.target.value);
 
     if (!event.target.value) {
-      setError({ field: 'name', message: 'name is required.' });
+      setError({ field: "name", message: "name is required." });
     } else {
-      removeError('name');
+      removeError("name");
     }
   }
 
@@ -42,9 +38,9 @@ export default function ContactForm({ buttonLabel }) {
     setEmail(event.target.value);
 
     if (event.target.value && !isEmailValid(event.target.value)) {
-      setError({ field: 'email', message: 'email is required.' });
+      setError({ field: "email", message: "email is required." });
     } else {
-      removeError('email');
+      removeError("email");
     }
   }
 
@@ -57,17 +53,16 @@ export default function ContactForm({ buttonLabel }) {
   }
   return (
     <Form onSubmit={handleSubmit} noValidate>
-
-      <FormGroup error={getErrorMessageByFieldName('name')}>
+      <FormGroup error={getErrorMessageByFieldName("name")}>
         <Input
-          error={getErrorMessageByFieldName('name')}
+          error={getErrorMessageByFieldName("name")}
           placeholder="name *"
           value={name}
           onChange={handleNameChange}
         />
       </FormGroup>
 
-     {/*  {' '}
+      {/*  {' '}
       <FormGroup>
         <Input
           placeholder="date"
@@ -76,10 +71,10 @@ export default function ContactForm({ buttonLabel }) {
       </FormGroup>
       {' '} */}
 
-      <FormGroup error={getErrorMessageByFieldName('email')}>
+      <FormGroup error={getErrorMessageByFieldName("email")}>
         <Input
           type="email"
-          error={getErrorMessageByFieldName('email')}
+          error={getErrorMessageByFieldName("email")}
           placeholder="email"
           value={email}
           onChange={handleEmailChange}
