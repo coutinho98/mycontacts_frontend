@@ -13,7 +13,7 @@ export const Overlay = styled.div`
 
   .loader {
         position: relative;
-        border: 24px solid ${({ theme }) => theme.colors.primary.light};
+        border: 24px solid #FEF100;
         border-radius: 50%;
         box-sizing: border-box;
         animation: eat 1s linear infinite;
@@ -38,7 +38,7 @@ export const Overlay = styled.div`
       }
 
       @keyframes eat {
-        0% , 49% { border-right-color: ${({ theme }) => theme.colors.primary.light} }
+        0% , 49% { border-right-color: #FEF100 }
         50% , 100% { border-right-color: #0000 }
       }
       @keyframes move {
