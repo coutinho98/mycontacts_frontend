@@ -18,6 +18,7 @@ import trash from "../../assets/images/icons/trash.svg";
 export default function Home() {
   const [contacts, setContacts] = useState([]);
   const [orderBy, setOrderBy] = useState("asc");
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`)
@@ -30,35 +31,48 @@ export default function Home() {
       });
   }, [orderBy]);
 
+  const filteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   function handleToggleOrderBy() {
     setOrderBy((prevState) => (prevState === "asc" ? "desc" : "asc"));
   }
 
-  console.log(orderBy);
+  function handleChangeSearchTerm(event) {
+    setSearchTerm(event.target.value);
+  }
 
   return (
     <Container>
       {/*  <Loader /> */}
       {/*   <Modal danger /> */}
       <InputSearchContainer>
-        <input type="text" placeholder="search for contacts" />
+        <input
+          value={searchTerm}
+          type="text"
+          placeholder="search for contacts"
+          onChange={handleChangeSearchTerm}
+        />
       </InputSearchContainer>
       <Header>
         <strong>
-          {contacts.length}
-          {contacts.length === 1 ? " contact" : " contacts"}
+          {filteredContacts.length}
+          {filteredContacts.length === 1 ? " contact" : " contacts"}
         </strong>
         <Link to="/new">new contact</Link>
       </Header>
 
-      <ListHeader orderBy={orderBy}>
-        <button type="button" onClick={handleToggleOrderBy}>
-          <span>name</span>
-          <img src={arrow} alt="Arrow" />
-        </button>
-      </ListHeader>
+      {filteredContacts.length > 0 && (
+        <ListHeader orderBy={orderBy}>
+          <button type="button" onClick={handleToggleOrderBy}>
+            <span>name</span>
+            <img src={arrow} alt="Arrow" />
+          </button>
+        </ListHeader>
+      )}
 
-      {contacts.map((contact) => (
+      {filteredContacts.map((contact) => (
         <Card key={contact.id}>
           <div className="info">
             <div className="contact-name">
