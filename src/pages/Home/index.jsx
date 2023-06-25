@@ -31,22 +31,25 @@ export default function Home() {
   );
 
   useEffect(() => {
-    setIsLoading(true);
+    async function loadContacts() {
+      try {
+        setIsLoading(true);
 
-    fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`)
-      .then(async (response) => {
+        const response = await fetch(
+          `http://localhost:3001/contacts?orderBy=${orderBy}`
+        );
         await delay(2000);
 
         const json = await response.json();
         setContacts(json);
+      } catch (error) {
+        console.log("error", error);
+      } finally {
         setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+      }
+    }
+
+    loadContacts();
   }, [orderBy]);
 
   function handleToggleOrderBy() {
@@ -59,20 +62,20 @@ export default function Home() {
 
   return (
     <Container>
-      {isLoading && <Loader />}
+      <Loader isLoading={isLoading} />
       {/*   <Modal danger /> */}
       <InputSearchContainer>
         <input
           value={searchTerm}
           type="text"
-          placeholder="search for contacts"
+          placeholder="pesquise pelo colaborador"
           onChange={handleChangeSearchTerm}
         />
       </InputSearchContainer>
       <Header>
         <strong>
           {filteredContacts.length}
-          {filteredContacts.length === 1 ? " contact" : " contacts"}
+          {filteredContacts.length === 1 ? " contato" : " contatos"}
         </strong>
         <Link to="/new">new contact</Link>
       </Header>
