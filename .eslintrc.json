@@ -27,6 +27,8 @@
     "operator-linebreak": "off",
     "implicit-arrow-linebreak": "off",
     "quotes": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-undef": "off"
   }
 }

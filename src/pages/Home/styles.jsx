@@ -1,115 +1,118 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-      margin-top: 32px;
-      position: relative;
+  margin-top: 32px;
+  position: relative;
 `;
 
 export const InputSearchContainer = styled.div`
-      width: 100%;
+  width: 100%;
 
-    input {
-      background: '#fff';
-      width: 100%;
-      height: 50px;
-      border: none;
-      border-radius: 25px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      outline: 0;
-      padding: 0 16px;
+  input {
+    background: "#fff";
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    outline: 0;
+    padding: 0 16px;
 
     &::placeholder {
       opacity: 0.4;
-        }
     }
+  }
 `;
 
 export const Header = styled.header`
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
 
   strong {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   a {
-      color: ${({ theme }) => theme.colors.primary.main};
-      text-decoration: none;
-      font-weight: bold;
-      border: 2px solid ${({ theme }) => theme.colors.primary.main};
-      padding: 7px 16px;
-      border-radius: 4px;
-      transition: all 0.4s ease-in;
+    color: ${({ theme }) => theme.colors.primary.main};
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid ${({ theme }) => theme.colors.primary.main};
+    padding: 7px 16px;
+    border-radius: 4px;
+    transition: all 0.4s ease-in;
 
-  &:hover {
+    &:hover {
       background: ${({ theme }) => theme.colors.primary.main};
       color: #fff;
     }
   }
 `;
 
-export const ListContainer = styled.div`
-      margin-top: 24px;
+export const ListHeader = styled.header`
+  margin-top: 24px;
+  margin-bottom: 8px;
 
-  header {
-      margin-bottom: 8px;
-  .sort-button {
-      background: transparent;
-      border: none;
-      display: flex;
-      align-items: center;
+  button {
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
 
     span {
       margin-right: 8px;
       font-weight: bold;
       color: ${({ theme }) => theme.colors.primary.main};
-         }
-      }
     }
+
+    img {
+      transform: ${({ orderBy }) => (orderBy === "asc" ? "rotate(180deg)" : "rotate(0deg)")};
+      transition: transform 0.3s ease-in;
+    }
+  }
 `;
 
 export const Card = styled.div`
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-      & + & {
-      margin-top: 18px;
-      }
+  & + & {
+    margin-top: 18px;
+  }
 
   .info {
     .contact-name {
       display: flex;
       align-items: center;
 
-    small {
-      background: ${({ theme }) => theme.colors.primary.lighter};
-      color: ${({ theme }) => theme.colors.primary.main};
-      font-weight: bold;
-      text-transform: uppercase;
-      padding: 4px;
-      border-radius: 4px;
-      margin-left: 8px;
-     }
-    }
-
-     span {
-      display: block;
-      font-size: 14px;
-      color: ${({ theme }) => theme.colors.gray[300]};
+      small {
+        background: ${({ theme }) => theme.colors.primary.lighter};
+        color: ${({ theme }) => theme.colors.primary.main};
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 4px;
+        border-radius: 4px;
+        margin-left: 8px;
       }
     }
 
-    .actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    span {
+      display: block;
+      font-size: 14px;
+      color: ${({ theme }) => theme.colors.gray[300]};
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     button {
       background: transparent;
