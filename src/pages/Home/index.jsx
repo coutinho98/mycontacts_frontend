@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -34,7 +34,7 @@ export default function Home() {
     [contacts, searchTerm]
   );
 
-  async function loadContacts() {
+  const loadContacts = useCallback(async () => {
     try {
       setIsLoading(true);
 
@@ -47,10 +47,11 @@ export default function Home() {
     } finally {
       setIsLoading(false);
     }
-  }
+  }, [orderBy]);
+
   useEffect(() => {
     loadContacts();
-  }, [orderBy]);
+  }, [loadContacts]);
 
   function handleToggleOrderBy() {
     setOrderBy((prevState) => (prevState === "asc" ? "desc" : "asc"));
@@ -89,7 +90,7 @@ export default function Home() {
       {hasError && (
         <ErrorContainer>
           <div className="details">
-            <strong>Ocorreu um erro ao obter os contatos</strong>
+            <strong>Ocorreu um erro, abra um chamado para atlassan@Kordsa.com</strong>
             <Button type="button" onClick={handleTryAgain}>
               Tentar Novamente
             </Button>

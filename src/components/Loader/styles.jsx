@@ -12,55 +12,45 @@ export const Overlay = styled.div`
   background: rgba(246, 245, 252, 0.7);
 
   .loader {
-    position: relative;
-    border: 24px solid ${({ theme }) => theme.colors.primary.light};
-    border-radius: 50%;
-    box-sizing: border-box;
-    animation: eat 1s linear infinite;
-  }
-  .loader::after,
-  .loader::before {
-    content: "";
-    position: absolute;
-    left: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: ${({ theme }) => theme.colors.primary.light};
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    opacity: 0;
-    animation: move 2s linear infinite;
-  }
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: block;
+  margin:15px auto;
+  position: relative;
+  color: #FFF;
+  left: -100px;
+  box-sizing: border-box;
+  animation: shadowRolling 2s linear infinite;
+}
 
-  .loader::before {
-    animation-delay: 1s;
+@keyframes shadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
-
-  @keyframes eat {
-    0%,
-    49% {
-      border-right-color: ${({ theme }) => theme.colors.primary.light};
-    }
-    50%,
-    100% {
-      border-right-color: #0000;
-    }
+  12% {
+    box-shadow: 100px 0 ${({ theme }) => theme.colors.primary.main}, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
-  @keyframes move {
-    0% {
-      left: 75px;
-      opacity: 1;
-    }
-    50% {
-      left: 0px;
-      opacity: 1;
-    }
-    52%,
-    100% {
-      left: -5px;
-      opacity: 0;
-    }
+  25% {
+    box-shadow: 110px 0 ${({ theme }) => theme.colors.primary.main}, 100px 0 ${({ theme }) => theme.colors.primary.main}, 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
   }
+  36% {
+    box-shadow: 120px 0 ${({ theme }) => theme.colors.primary.main}, 110px 0 ${({ theme }) => theme.colors.primary.main}, 100px 0 ${({ theme }) => theme.colors.primary.main}, 0px 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 130px 0 ${({ theme }) => theme.colors.primary.main}, 120px 0 ${({ theme }) => theme.colors.primary.main}, 110px 0 ${({ theme }) => theme.colors.primary.main}, 100px 0 ${({ theme }) => theme.colors.primary.main};
+  }
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 ${({ theme }) => theme.colors.primary.main}, 120px 0 ${({ theme }) => theme.colors.primary.main}, 110px 0 ${({ theme }) => theme.colors.primary.main};
+  }
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 ${({ theme }) => theme.colors.primary.main}, 120px 0 ${({ theme }) => theme.colors.primary.main};
+  }
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 ${({ theme }) => theme.colors.primary.main};
+  }
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
 `;
