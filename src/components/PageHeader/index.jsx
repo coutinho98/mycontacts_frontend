@@ -9,7 +9,7 @@ export default function PageHeader({ title }) {
     <Container>
       <Link to="/">
         <img src={arrow} alt="back" />
-        <span>back</span>
+        <span>voltar</span>
       </Link>
       <h1>{title}</h1>
     </Container>

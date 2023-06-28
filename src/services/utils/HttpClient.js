@@ -8,9 +8,22 @@ class HttpClient {
   async get(path) {
     const response = await fetch(`${this.baseURL}${path}`);
 
-    await delay(2000);
+    let body = null;
+    const contentType = response.headers.get("Content-Type");
+    if (contentType.includes("application/json")) {
+      body = await response.json();
+    }
 
-    return response.json();
+    if (response.ok) {
+      await delay(2000);
+      return body;
+    }
+
+    console.log(body);
+
+    throw new Error(
+      body?.error || `${response.status} - ${response.statusText}`
+    );
   }
 }
 

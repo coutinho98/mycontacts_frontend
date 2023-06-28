@@ -73,13 +73,13 @@ export default function Home() {
           {filteredContacts.length}
           {filteredContacts.length === 1 ? " contato" : " contatos"}
         </strong>
-        <Link to="/new">new contact</Link>
+        <Link to="/new">+ novo contato</Link>
       </Header>
 
       {filteredContacts.length > 0 && (
         <ListHeader orderBy={orderBy}>
           <button type="button" onClick={handleToggleOrderBy}>
-            <span>name</span>
+            <span>nome</span>
             <img src={arrow} alt="Arrow" />
           </button>
         </ListHeader>

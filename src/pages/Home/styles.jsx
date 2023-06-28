@@ -28,7 +28,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 32px;
+  margin-top: 25px;
 
   strong {
     font-size: 20px;
@@ -51,8 +51,8 @@ export const Header = styled.header`
 `;
 
 export const ListHeader = styled.header`
-  margin-top: 24px;
-  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   button {
     background: transparent;
@@ -67,7 +67,8 @@ export const ListHeader = styled.header`
     }
 
     img {
-      transform: ${({ orderBy }) => (orderBy === "asc" ? "rotate(180deg)" : "rotate(0deg)")};
+      transform: ${({ orderBy }) =>
+    (orderBy === "asc" ? "rotate(180deg)" : "rotate(0deg)")};
       transition: transform 0.3s ease-in;
     }
   }
@@ -105,7 +106,7 @@ export const Card = styled.div`
     span {
       display: block;
       font-size: 14px;
-      color: ${({ theme }) => theme.colors.gray[300]};
+      color: ${({ theme }) => theme.colors.gray[900]};
     }
   }
 
