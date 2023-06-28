@@ -1,5 +1,3 @@
-import delay from "../../utils/delay";
-
 class HttpClient {
   constructor(baseURL) {
     this.baseURL = baseURL;
@@ -15,7 +13,6 @@ class HttpClient {
     }
 
     if (response.ok) {
-      await delay(2000);
       return body;
     }
 
